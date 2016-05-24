@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gPo-wO-1dB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="jo0-51-FU2">
+            <objects>
+                <tableViewController id="wUe-Yv-tvb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IAN-V9-IwF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eO5-Cr-lOg">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eO5-Cr-lOg" id="azm-XA-Laa">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnF-nc-OOg">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVO-pk-WVL">
+                                            <rect key="frame" x="0.0" y="26" width="600" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="r8R-ur-dCj" kind="show" id="4c7-kQ-Dhu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wUe-Yv-tvb" id="YEb-vM-SQe"/>
+                            <outlet property="delegate" destination="wUe-Yv-tvb" id="50J-oa-JfD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="OYq-C6-j5a">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uhg-k0-gkR">
+                            <connections>
+                                <segue destination="r8R-ur-dCj" kind="show" id="WoB-VB-BWJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amt-7W-ofa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="376"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="t8k-mc-Nc1">
+            <objects>
+                <viewController id="r8R-ur-dCj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z37-ZT-aCM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pob-me-pxv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z7w-4M-Em3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wR4-IB-e7N">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author's Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-fl-a9T">
+                                <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wR4-IB-e7N" firstAttribute="leading" secondItem="Z7w-4M-Em3" secondAttribute="leadingMargin" id="04D-y9-k2l"/>
+                            <constraint firstItem="wR4-IB-e7N" firstAttribute="leading" secondItem="dKM-fl-a9T" secondAttribute="leading" id="3qc-34-kty"/>
+                            <constraint firstItem="dKM-fl-a9T" firstAttribute="top" secondItem="wR4-IB-e7N" secondAttribute="bottom" constant="8" symbolic="YES" id="Cok-er-8ej"/>
+                            <constraint firstItem="wR4-IB-e7N" firstAttribute="trailing" secondItem="Z7w-4M-Em3" secondAttribute="trailingMargin" id="XiN-VE-a58"/>
+                            <constraint firstItem="wR4-IB-e7N" firstAttribute="top" secondItem="Z37-ZT-aCM" secondAttribute="bottom" constant="8" symbolic="YES" id="ZwN-so-E1T"/>
+                            <constraint firstItem="wR4-IB-e7N" firstAttribute="trailing" secondItem="dKM-fl-a9T" secondAttribute="trailing" id="gZp-D6-6OY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="HsU-S9-Zfe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="roV-Cr-x4v"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zuI-EG-9dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="376"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZAP-HW-0YS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gPo-wO-1dB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a15-4u-ejo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wUe-Yv-tvb" kind="relationship" relationship="rootViewController" id="nTK-HH-RUl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bx6-R5-ptR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="376"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WoB-VB-BWJ"/>
+    </inferredMetricsTieBreakers>
+</document>
