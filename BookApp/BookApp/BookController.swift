@@ -6,30 +6,32 @@
 //  Copyright © 2016 trianglez. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class BookController: UIViewController {
+class BookController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    static let sharedController = BookController()
+    var books: [Book]
+    private let booksKey = "books"
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    init() {
+        self.books = []
+    loadFromPersistentStorage() }
+ 
+    func addBook(book: Book){
+        books.append(book)
+        saveToPersistentStorage() }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+    func removeBook(book: Book){
+        if let index = books.indexOf(book){
+           books.removeAtIndex(index)
+            saveToPersistentStorage() }}
+        
+        func saveToPersistentStorage() {
+            NSUserDefaults.standardUserDefaults().setObject(books.map{$0.dictionaryCopy}, forKey: booksKey)}
+        
+        func loadFromPersistentStorage() {
+            guard let booksDictionaryArray = NSUserDefaults.standardUserDefaults().objectForKey(booksKey) as? [[String: AnyObject]] else { return }
+            books = booksDictionaryArray.flatMap{Book(dictionary: $0)}}
+        }
+    

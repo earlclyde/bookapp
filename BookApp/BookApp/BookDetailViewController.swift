@@ -10,26 +10,51 @@ import UIKit
 
 class BookDetailViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    @IBOutlet weak var authorTextField: UITextField!
+    
+    var book: Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let book = book {
+            updateWithBook(book)
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        if let book = book {
+            guard let title = titleTextField.text, author = authorTextField.text else {
+                return
+            }
+            book.title = title
+            book.author = author
+            self.authorTextField.resignFirstResponder()
+        } else {
+            guard let title = titleTextField.text, author = authorTextField.text else {
+                return
+            }
+            let book = Book(title: title, author: author)
+            BookController.sharedController.addBook(book)
+            self.book = book
+        }
+        self.navigationController?.popViewControllerAnimated(true)
     }
-    */
-
+        func textFieldShouldReturn(textField: UITextField) -> Bool {
+            titleTextField.resignFirstResponder()
+            return true
+    }
+    
+    func updateWithBook(book: Book) {
+       self.navigationItem.title = book.title
+        authorTextField.text = book.author
+        titleTextField.text = book.title
+        }
 }

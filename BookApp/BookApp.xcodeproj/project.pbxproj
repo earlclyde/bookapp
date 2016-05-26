@@ -16,6 +16,7 @@
 		18041F9E1CF519AE002D6100 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041F9D1CF519AE002D6100 /* Book.swift */; };
 		18041FA01CF519CC002D6100 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041F9F1CF519CC002D6100 /* BookDetailViewController.swift */; };
 		18041FA21CF519E2002D6100 /* BookListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041FA11CF519E2002D6100 /* BookListTableViewController.swift */; };
+		18041FA41CF51D5B002D6100 /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18041FA31CF51D5B002D6100 /* BookController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		18041F9D1CF519AE002D6100 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		18041F9F1CF519CC002D6100 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		18041FA11CF519E2002D6100 /* BookListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListTableViewController.swift; sourceTree = "<group>"; };
+		18041FA31CF51D5B002D6100 /* BookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				18041F6F1CF516AF002D6100 /* AppDelegate.swift */,
 				18041F731CF516AF002D6100 /* Main.storyboard */,
 				18041F9D1CF519AE002D6100 /* Book.swift */,
+				18041FA31CF51D5B002D6100 /* BookController.swift */,
 				18041F9F1CF519CC002D6100 /* BookDetailViewController.swift */,
 				18041FA11CF519E2002D6100 /* BookListTableViewController.swift */,
 				18041F761CF516AF002D6100 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18041F9E1CF519AE002D6100 /* Book.swift in Sources */,
+				18041FA41CF51D5B002D6100 /* BookController.swift in Sources */,
 				18041F701CF516AF002D6100 /* AppDelegate.swift in Sources */,
 				18041FA21CF519E2002D6100 /* BookListTableViewController.swift in Sources */,
 				18041FA01CF519CC002D6100 /* BookDetailViewController.swift in Sources */,
@@ -490,6 +494,7 @@
 				18041F961CF516AF002D6100 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18041F971CF516AF002D6100 /* Build configuration list for PBXNativeTarget "BookAppTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				18041F991CF516AF002D6100 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18041F9A1CF516AF002D6100 /* Build configuration list for PBXNativeTarget "BookAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				18041F9C1CF516AF002D6100 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

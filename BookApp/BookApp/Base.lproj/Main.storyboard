@@ -6,38 +6,40 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Book List Table View Controller-->
         <scene sceneID="jo0-51-FU2">
             <objects>
-                <tableViewController id="wUe-Yv-tvb" sceneMemberID="viewController">
+                <tableViewController id="wUe-Yv-tvb" customClass="BookListTableViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IAN-V9-IwF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eO5-Cr-lOg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="entryCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" textLabel="KUy-PO-0AE" detailTextLabel="KdW-eF-g2w" style="IBUITableViewCellStyleSubtitle" id="eO5-Cr-lOg">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eO5-Cr-lOg" id="azm-XA-Laa">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnF-nc-OOg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KUy-PO-0AE">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVO-pk-WVL">
-                                            <rect key="frame" x="0.0" y="26" width="600" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdW-eF-g2w">
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="r8R-ur-dCj" kind="show" id="4c7-kQ-Dhu"/>
+                                    <segue destination="r8R-ur-dCj" kind="show" identifier="toShowEntry" id="4c7-kQ-Dhu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,7 +51,7 @@
                     <navigationItem key="navigationItem" id="OYq-C6-j5a">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uhg-k0-gkR">
                             <connections>
-                                <segue destination="r8R-ur-dCj" kind="show" id="WoB-VB-BWJ"/>
+                                <segue destination="r8R-ur-dCj" kind="show" identifier="toAddBook" id="WoB-VB-BWJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -61,7 +63,7 @@
         <!--Title-->
         <scene sceneID="t8k-mc-Nc1">
             <objects>
-                <viewController id="r8R-ur-dCj" sceneMemberID="viewController">
+                <viewController id="r8R-ur-dCj" customClass="BookDetailViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z37-ZT-aCM"/>
                         <viewControllerLayoutGuide type="bottom" id="Pob-me-pxv"/>
@@ -92,8 +94,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="HsU-S9-Zfe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="roV-Cr-x4v"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="roV-Cr-x4v">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="r8R-ur-dCj" id="aAE-lA-P9r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="authorTextField" destination="dKM-fl-a9T" id="7sJ-9A-fFA"/>
+                        <outlet property="titleTextField" destination="wR4-IB-e7N" id="c8v-Ub-awN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuI-EG-9dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +129,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WoB-VB-BWJ"/>
+        <segue reference="4c7-kQ-Dhu"/>
     </inferredMetricsTieBreakers>
 </document>
